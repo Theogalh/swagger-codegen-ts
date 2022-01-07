@@ -15,9 +15,9 @@ const utils = `
 		success,
 		string as tstring,
 		literal,
-		Validate,
-		Context,
-		getValidationError,
+//		Validate,
+//		Context,
+//		getValidationError,
 	} from 'io-ts';
 
 	export const DateFromISODateStringIO = new Type<Date, string, unknown>(
@@ -35,7 +35,7 @@ const utils = `
 				.toString()
 				.padStart(2, '0')}\`,
 	);
-	
+
 	export type Base64 = TypeOf<typeof Base64IO>;
 
 	export const Base64IO = type({
@@ -64,15 +64,15 @@ const utils = `
 		a => a.string,
 	);
 
-	const validateBlob: Validate<unknown, Blob> = (u: unknown, c: Context) =>
-		u instanceof Blob ? right(u) : left([getValidationError(u, c)]);
-
-	export const BlobToBlobIO = new Type<Blob, Blob, unknown>(
-		'Base64FromString',
-		(u): u is Blob => u instanceof Blob,
-		validateBlob,
-		a => a,
-	);
+//	const validateBlob: Validate<unknown, Blob> = (u: unknown, c: Context) =>
+//		u instanceof Blob ? right(u) : left([getValidationError(u, c)]);
+//
+//	export const BlobToBlobIO = new Type<Blob, Blob, unknown>(
+//		'Base64FromString',
+//		(u): u is Blob => u instanceof Blob,
+//		validateBlob,
+//		a => a,
+//	);
 
 	const blobMediaRegexp = /^(video|audio|image|application)/;
 	const textMediaRegexp = /^text/;

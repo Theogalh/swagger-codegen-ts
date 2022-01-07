@@ -1,6 +1,6 @@
 {
-  "name": "@devexperts/swagger-codegen-ts",
-  "version": "2.0.0-alpha.27",
+  "name": "@theogalh/swagger-codegen-ts",
+  "version": "2.0.0-alpha.28",
   "description": "TS generator for swagger spec",
   "main": "dist/index.js",
   "scripts": {
@@ -17,16 +17,16 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "version": "yarn changelog && git add CHANGELOG.md"
   },
-  "author": "devexperts",
+  "author": "theogalh",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devexperts/swagger-codegen-ts.git"
+    "url": "git+https://github.com/theogalh/swagger-codegen-ts.git"
   },
   "bugs": {
-    "url": "git+https://github.com/devexperts/swagger-codegen-ts/issues"
+    "url": "git+https://github.com/theogalh/swagger-codegen-ts/issues"
   },
-  "homepage": "https://github.com/devexperts/swagger-codegen-ts#readme",
+  "homepage": "https://github.com/theogalh/swagger-codegen-ts#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -52,7 +52,7 @@
     "eslint": "^6.7.2",
     "fast-check": "^1.17.0",
     "fp-ts": "^2.1.0",
-    "io-ts": "^2.0.1",
+    "io-ts": "^2.1.0",
     "io-ts-types": "^0.5.1",
     "jest": "^24.9.0",
     "nodemon": "^1.18.3",

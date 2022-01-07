@@ -1,6 +1,6 @@
 import { serializeSchemaObject } from './schema-object';
 import {
-	getSerializedBlobType,
+	// getSerializedBlobType,
 	getSerializedRefType,
 	SerializedType,
 	SERIALIZED_STRING_TYPE,
@@ -28,7 +28,7 @@ export const serializeRequestBodyObject = (from: Ref, body: RequestBodyObject): 
 				option.map(schema => ({ mediaType, schema })),
 			),
 		),
-		either.fromOption(() => new Error('No schema found for ReqeustBodyObject')),
+		either.fromOption(() => new Error('No schema found for RequestBodyObject')),
 		either.chain(({ mediaType, schema }) => {
 			const resType = getResponseTypeFromMediaType(mediaType);
 			return serializeRequestSchema(resType, schema, from);
@@ -54,6 +54,7 @@ const serializeRequestSchema = (
 		case 'text':
 			return either.right(SERIALIZED_STRING_TYPE);
 		case 'blob':
-			return getSerializedBlobType(from);
+			// return getSerializedBlobType(from);
+			return either.right(SERIALIZED_STRING_TYPE);
 	}
 };

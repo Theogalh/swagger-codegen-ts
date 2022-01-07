@@ -2,7 +2,7 @@ import {
 	SerializedType,
 	getSerializedRefType,
 	SERIALIZED_STRING_TYPE,
-	getSerializedBlobType,
+	// getSerializedBlobType,
 } from '../../common/data/serialized-type';
 import { pipe } from 'fp-ts/lib/pipeable';
 import { serializeSchemaObject } from './schema-object';
@@ -90,6 +90,7 @@ const serializeResponseSchema = (
 		case 'text':
 			return either.right(SERIALIZED_STRING_TYPE);
 		case 'blob':
-			return getSerializedBlobType(from);
+			// return getSerializedBlobType(from);
+			return either.right(SERIALIZED_STRING_TYPE);
 	}
 };

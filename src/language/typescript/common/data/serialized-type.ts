@@ -99,6 +99,22 @@ export const SERIALIZED_DATE_TYPE = serializedType(
 	[],
 );
 export const SERIALIZED_STRING_TYPE = serializedType('string', 'string', [serializedDependency('string', 'io-ts')], []);
+
+export const getSerializedIntegerType = (format: Option<string>): SerializedType => {
+	return pipe(
+		format,
+		option.chain(format => {
+			switch (format) {
+				case 'bigint': {
+					return some(serializedType('bigint', 'bigint', [serializedDependency('bigint', 'io-ts')], []));
+				}
+			}
+			return none;
+		}),
+		option.getOrElse(() => SERIALIZED_INTEGER_TYPE),
+	);
+};
+
 export const getSerializedStringType = (from: Ref, format: Option<string>): Either<Error, SerializedType> => {
 	return combineEither(utilsRef, utilsRef => {
 		return pipe(
@@ -106,6 +122,16 @@ export const getSerializedStringType = (from: Ref, format: Option<string>): Eith
 			option.chain(format => {
 				// https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14
 				switch (format) {
+					case 'bigint': {
+						return some(
+							serializedType(
+								'bigint',
+								'BigIntFromString',
+								[serializedDependency('BigIntFromString', 'io-ts-types/lib/BigIntFromString')],
+								[],
+							),
+						);
+					}
 					case 'date-time': {
 						return some(SERIALIZED_DATETIME_TYPE);
 					}

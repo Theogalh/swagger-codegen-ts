@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/devexperts/swagger-codegen-ts.svg?branch=master)](https://travis-ci.org/devexperts/swagger-codegen-ts)
+Fork of [devexperts/swagger-codegen-ts](https://www.npmjs.com/package/@devexperts/swagger-codegen-ts)
 
 # Typesafe OpenAPI generator for TypeScript
 
@@ -39,7 +39,7 @@ More usage scenarios are supported - check the [usage page](./docs/usage/generat
 1. Make sure the peer dependencies are installed, then install the codegen itself:
    ```
    yarn add typescript fp-ts io-ts io-ts-types
-   yarn add -D @devexperts/swagger-codegen-ts
+   yarn add -D @theogalh/swagger-codegen-ts
    ```
 
 2. Create a console script that would invoke the `generate` function, passing the options such as path to the schema file and the output directory.
@@ -60,7 +60,7 @@ See the [Generators](docs/usage/api.md) page for the API reference, and [example
 
 ## Contributing
 
-* Feel free to file bugs and feature requests in [GitHub issues](https://github.com/devexperts/swagger-codegen-ts/issues/new).
+* Feel free to file bugs and feature requests in [GitHub issues](https://github.com/theogalh/swagger-codegen-ts/issues/new).
 * Pull requests are welcome - please use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/).
 
 Please read the [Contributors Guide](./docs/development/contributors-guide.md) for more information.
