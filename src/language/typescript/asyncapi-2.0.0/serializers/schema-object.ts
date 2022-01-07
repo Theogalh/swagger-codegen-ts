@@ -76,7 +76,7 @@ const serializeSchemaObjectWithRecursion = (
 			return right(SERIALIZED_NUMBER_TYPE);
 		}
 		case 'integer': {
-			return right(getSerializedIntegerType(from, schemaObject.format));
+			return right(getSerializedIntegerType(schemaObject.format));
 		}
 		case 'boolean': {
 			return right(SERIALIZED_BOOLEAN_TYPE);

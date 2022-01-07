@@ -100,7 +100,7 @@ export const SERIALIZED_DATE_TYPE = serializedType(
 );
 export const SERIALIZED_STRING_TYPE = serializedType('string', 'string', [serializedDependency('string', 'io-ts')], []);
 
-export const getSerializedIntegerType = (from: Ref, format: Option<string>): SerializedType => {
+export const getSerializedIntegerType = (format: Option<string>): SerializedType => {
 	return pipe(
 		format,
 		option.chain(format => {

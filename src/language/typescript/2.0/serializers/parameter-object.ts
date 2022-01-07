@@ -38,7 +38,7 @@ export const serializeParameterObject = (
 					return right(toSerializedParameter(SERIALIZED_NUMBER_TYPE));
 				}
 				case 'integer': {
-					return right(toSerializedParameter(getSerializedIntegerType(from, parameterObject.format)));
+					return right(toSerializedParameter(getSerializedIntegerType(parameterObject.format)));
 				}
 				case 'boolean': {
 					return right(toSerializedParameter(SERIALIZED_BOOLEAN_TYPE));

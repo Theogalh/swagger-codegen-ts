@@ -25,7 +25,7 @@ export const serializeItemsObject = (from: Ref, itemsObject: ItemsObject): Eithe
 			return right(SERIALIZED_NUMBER_TYPE);
 		}
 		case 'integer': {
-			return right(getSerializedIntegerType(from, itemsObject.format));
+			return right(getSerializedIntegerType(itemsObject.format));
 		}
 		case 'boolean': {
 			return right(SERIALIZED_BOOLEAN_TYPE);
